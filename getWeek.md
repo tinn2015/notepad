@@ -1,6 +1,7 @@
 ## js 获取每周
 
-`var getWeekNumber = function (src) {
+```
+var getWeekNumber = function (src) {
       const date = new Date(src.getTime())
       date.setHours(0, 0, 0, 0)
       // Thursday in current week decides the year.
@@ -11,9 +12,11 @@
       console.log(date, week1, 'tinn')
       // Adjust to Thursday in week 1 and count number of weeks from date to week 1.
       return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000 - 3 + (week1.getDay() + 6) % 7) / 7)
-    }`
+    }
+```
     
- ` var yugi = function (year) {
+ ``` 
+ var yugi = function (year) {
       var d = new Date(year, 0, 1)
       while (d.getDay() !== 1) {
         d.setDate(d.getDate() + 1)
@@ -32,4 +35,5 @@
         }
         i++
       }
-    }`
+    }
+```
