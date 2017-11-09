@@ -71,3 +71,9 @@
 34. 显示某一个提交所改动的文件： git show --stat commitId
 
 35. 通过配置全局git ignore 文件而忽略文件：git config --global core.excludesfile ~/.gitignore
+
+36. 本地与远程保持同步
+    1. 本地追踪远程创建的分支：git remote update
+    2. 本地追踪远程删除的分支： git remote prune
+    3. 查看远程没有的本地分支： git remote prune origin
+    
