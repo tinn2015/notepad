@@ -8,3 +8,5 @@
 - kill -9 PID
 ## 将文件file复制到目录/usr/men/tmp下，并改名为file1
 - cp file /usr/men/tmp/file1
+## 查看磁盘空间
+- df -h
