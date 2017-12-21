@@ -78,3 +78,4 @@
 - 本地追踪远程删除的分支： git remote prune
 - 查看远程没有的本地分支： git remote prune origin
     
+37. git config core.ignorecase false
