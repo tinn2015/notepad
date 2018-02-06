@@ -78,4 +78,8 @@
 - 本地追踪远程删除的分支： git remote prune
 - 查看远程没有的本地分支： git remote prune origin
     
-37. git config core.ignorecase false
+37. 回滚到某次commit： git reset --mixed commitId
+
+38. 暂存当前更改： git stash
+
+39. 回复暂存的文件： git stash pop
