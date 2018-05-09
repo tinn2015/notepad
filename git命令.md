@@ -83,3 +83,5 @@
 38. 暂存当前更改： git stash
 
 39. 回复暂存的文件： git stash pop
+
+40. 使用git branch recover_branch[新分支] commit_id命令用这个commit创建一个分支
