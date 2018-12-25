@@ -7,6 +7,26 @@ PWA 的主要特点包括下面三点：
 * 体验 - 快速响应，并且有平滑的动画响应用户的操作
 * 粘性 - 像设备上的原生应用，具有沉浸式的用户体验，用户可以添加到桌面
 PWA 本身强调渐进式，并不要求一次性达到安全、性能和体验上的所有要求，开发者可以通过 [PWA Checklist](https://developers.google.cn/web/progressive-web-apps/checklist) 查看现有的特征。
+
+# PWA中的一些技术
+1. Web App Mainfest
+   Manifest 的目的是将Web应用程序安装到设备的主屏幕，为用户提供更快的访问和更丰富的体验。
+   Manifest是一个JSON格式的文件，一个指定了Web App桌面图标、名称、开屏图标、运行模式等一系列资源的一个清单。
+   ```
+   <!-- 在index.html中添加以下meta标签 -->
+   <link rel="manifest" href="/manifest.json">
+   ```
+   
+2. Service Worker
+
+3. Cache API 缓存
+
+4. Push & Notification 推送与通知
+
+5. Background Sync 后台同步
+
+6. 响应式设计
+
 # 可靠
 当用户打开我们站点时（从桌面 icon 或者从浏览器），通过 [Service Worker](https://developers.google.cn/web/fundamentals/primers/service-workers/) 能够让用户在网络条件很差的情况下也能瞬间加载并且展现。
 
@@ -40,17 +60,21 @@ PWA 是对站点体验的一个飞跃式的提升，我们会从安全、性能�
 # Service Worker和HTTP缓存
 1、改写默认行为。
 例如，浏览器默认在刷新时，会对所有资源都重新发起请求，即使缓存还是有效期内，而使用了SW，就可以改写这个行为，直接返回缓存。
+
 2、缓存和更新并存。
 要让网页离线使用，就需要整站使用长缓存，包括HTML。而HTML使用了长缓存，就无法及时更新（浏览器没有开放接口直接删除某个html缓存）。而使用SW就可以，每次先使用缓存部分，然后再发起SW js的请求，这个请求我们可以实施变更，修改HTML版本，重新缓存一份。那么用户下次打开就可以看到新版本了。
+
 3、无侵入式。
 无侵入式版本控制。最优的版本控制，一般是HTML中记录所有js css的文件名（HASH），然后按需发起请求。每个资源都长缓存。而这个过程，就需要改变了项目结构，至少多一个js或者一段js控制版本号，发起请求时还需要url中注入冬天的文件名。使用了SW，就可以把这部分非业务逻辑整合到sw js中。
 无侵入式请求统计。例如缓存比例统计、图片404统计。
+
 4、额外缓存。
 HTTP缓存空间有限，容易被冲掉。虽然部分浏览器实现SW的存储也有淘汰机制，但多一层缓存，命中的概率就要更高了
+
 5、离线处理。
 当监测到离线，而且又没有缓存某个图片时，可以做特殊处理，返回离线的提示。又或者做一个纯前端的404/断网页面。类似Chrome的小恐龙页面。
 
 
-[参考](https://lavas.baidu.com/pwa/README)
+[lavas](https://lavas.baidu.com/pwa/README)
 
 [Service Worker 应用详解](https://lzw.me/a/pwa-service-worker.html)
